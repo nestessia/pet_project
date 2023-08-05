@@ -16,7 +16,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.views.generic.edit import CreateView
+from users.forms import UserRegistrationForm
+from django.views.generic import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', TemplateView.as_view(template_name="homepage/homepage.html"),
+         name='homepage'),
+
+    # Signup
+    path('signup/', CreateView.as_view(
+        template_name='registration/registration_form.html',
+        form_class=UserRegistrationForm)),
 ]
