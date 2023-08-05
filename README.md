@@ -1,1 +1,1 @@
-# pet_project
+# PET - проект Bellezza
