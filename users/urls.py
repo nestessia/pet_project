@@ -1,14 +1,13 @@
-'''
-from django.urls import path, reverse_lazy, include
+from django.urls import path
 from django.views.generic.edit import CreateView
-from .forms import RegistrationForm
+from users.forms import UserRegistrationForm
+from .views import profile_view
 
+app_name = 'users'
 
 urlpatterns = [
-    path('auth/registration/', CreateView.as_view(
-        template_name='registration/registration_form.html',
-        form_class=RegistrationForm,
-        success_url=reverse_lazy('blog:index')), name='registration',),
-    path('auth/', include('django.contrib.auth.urls')),
+    path('signup/', CreateView.as_view(
+         template_name='registration/registration_form.html',
+         form_class=UserRegistrationForm)),
+    path('profile/', profile_view, name='profile'),
 ]
-'''

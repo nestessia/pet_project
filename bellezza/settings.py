@@ -104,17 +104,21 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-LOGIN_REDIRECT_URL = 'blog:index'
-
+LOGIN_REDIRECT_URL = 'homepage:home'
 LOGIN_URL = 'login'
-
 EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
-
 EMAIL_FILE_PATH = BASE_DIR / 'sent_emails'
-
 TEMPLATES_DIR = BASE_DIR / 'templates'
-
 MEDIA_ROOT = BASE_DIR / 'media'
+STATIC_URL = 'static/'
+AUTH_USER_MODEL = 'users.User'
+
+LANGUAGE_CODE = 'ru-Ru'
+TIME_ZONE = 'Europe/Moscow'
+USE_I18N = True
+USE_TZ = True
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 TEMPLATES = [
     {
@@ -131,27 +135,3 @@ TEMPLATES = [
         },
     },
 ]
-
-# Internationalization
-# https://docs.djangoproject.com/en/4.2/topics/i18n/
-
-LANGUAGE_CODE = 'ru-Ru'
-
-TIME_ZONE = 'Europe/Moscow'
-
-USE_I18N = True
-
-USE_TZ = True
-
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.2/howto/static-files/
-
-STATIC_URL = 'static/'
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
-
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-AUTH_USER_MODEL = 'users.User'

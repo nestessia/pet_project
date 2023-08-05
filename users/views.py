@@ -2,6 +2,8 @@ from .forms import UserRegistrationForm
 from django.contrib.messages.views import SuccessMessageMixin
 from django.views.generic import CreateView
 from django.urls import reverse
+from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 
 
 class UserRegisterView(SuccessMessageMixin, CreateView):
@@ -17,3 +19,8 @@ class UserRegisterView(SuccessMessageMixin, CreateView):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Регистрация на сайте'
         return context
+
+
+@login_required
+def profile_view(request):
+    return render(request, 'users/client_profile.html')
