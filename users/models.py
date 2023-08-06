@@ -1,14 +1,13 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
-USER = 'user'
+USER = 'Пользователь'
 ADMIN = 'admin'
-MASTER = 'master'
+MASTER = 'Мастер'
 
 ROLE_CHOICES = [
     (USER, USER),
-    (ADMIN, ADMIN),
-    (MASTER, MASTER)
+    (MASTER, MASTER),
 ]
 
 
@@ -50,3 +49,5 @@ class User(AbstractUser):
         verbose_name = "Пользователь"
         verbose_name_plural = "Пользователи"
         ordering = ("id",)
+
+

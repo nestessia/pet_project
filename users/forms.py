@@ -7,12 +7,12 @@ class UserRegistrationForm(UserCreationForm):
     """
     Переопределенная форма регистрации пользователей
     """
-    username = forms.CharField(label="Имя пользователя", max_length=65)
 
     class Meta(UserCreationForm.Meta):
         model = User
+
         fields = UserCreationForm.Meta.fields + ('email', 'first_name',
-                                                 'last_name')
+                                                 'last_name', 'role')
 
     def clean_email(self):
         """
