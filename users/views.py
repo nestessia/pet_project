@@ -11,6 +11,9 @@ def profile_view(request):
 
 
 class RegistrationView(FormView):
+    """
+    Регистрация пользователя.
+    """
     form_class = UserRegistrationForm
     template_name = 'registration/registration_form.html'
     success_url = reverse_lazy('homepage:home')
