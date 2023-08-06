@@ -21,5 +21,6 @@ app_name = 'bellezza'
 
 urlpatterns = [
     path('', include('homepage.urls')),
+    path('auth/', include('users.urls')),
     path('admin/', admin.site.urls),
 ]
